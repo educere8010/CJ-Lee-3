@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3 · Be Positive, Be Happy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E8;
+    --paper-2:#FBF8F2;
+    --ink:#2C2A26;
+    --ink-soft:#5A554C;
+    --terra:#C75B2C;
+    --terra-soft:#E9D3C5;
+    --teal:#2F7A66;
+    --teal-soft:#D6E6E0;
+    --line:#E3DACB;
+    --yellow:#FCE9A6;
+    --green-mark:#CDEBD9;
+    --shadow:0 1px 3px rgba(70,60,40,.08), 0 6px 22px rgba(70,60,40,.06);
+    --en:"Fraunces", Georgia, serif;
+    --ko:"Gowun Dodum","Noto Sans KR",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--ko);
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .en{font-family:var(--en);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 60px;}
+
+  /* Header */
+  header{
+    text-align:center;
+    padding:30px 16px 18px;
+    max-width:760px;margin:0 auto;
+  }
+  .kicker{
+    font-family:var(--ko);
+    font-size:.82rem;
+    letter-spacing:.12em;
+    color:var(--teal);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  header h1{
+    font-family:var(--en);
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.15;
+    margin:0 0 10px;
+    color:var(--ink);
+    font-style:italic;
+  }
+  .sub{
+    font-family:var(--ko);
+    font-size:.95rem;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+
+  /* Tabs */
+  .tabs{
+    position:sticky;top:0;z-index:30;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:8px 0 0;
+  }
+  .tabs-inner{
+    max-width:760px;margin:0 auto;
+    display:flex;gap:4px;
+    overflow-x:auto;
+    padding:0 10px 8px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .tabs-inner::-webkit-scrollbar{display:none;}
+  .tab{
+    flex:0 0 auto;
+    border:none;background:transparent;
+    font-family:var(--ko);font-size:.92rem;font-weight:700;
+    color:var(--ink-soft);
+    padding:9px 13px;border-radius:10px 10px 0 0;
+    cursor:pointer;white-space:nowrap;
+    transition:.15s;
+  }
+  .tab:hover{color:var(--ink);}
+  .tab.active{color:var(--terra);background:var(--paper-2);box-shadow:0 -2px 0 var(--terra) inset;}
+
+  /* Panels */
+  .panel{display:none;padding-top:22px;}
+  .panel.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+  .panel-head{margin:4px 0 18px;}
+  .panel-head h2{
+    font-family:var(--en);font-style:italic;font-weight:600;
+    font-size:1.5rem;margin:0 0 4px;color:var(--terra);
+  }
+  .panel-head p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+  /* Cards */
+  .card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:18px 18px;
+    margin:0 0 16px;
+    box-shadow:var(--shadow);
+  }
+  .card-title{
+    font-family:var(--ko);font-weight:700;font-size:1.02rem;
+    color:var(--ink);margin:0 0 12px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .ic{
+    width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+    display:grid;place-items:center;font-size:1rem;
+    background:var(--terra-soft);
+  }
+  .ic.teal{background:var(--teal-soft);}
+
+  .ko-line{font-family:var(--ko);color:var(--ink-soft);font-size:.92rem;}
+  .en-line{font-family:var(--en);font-size:1.06rem;color:var(--ink);}
+
+  /* highlight marks */
+  mark{background:var(--yellow);color:var(--ink);padding:0 2px;border-radius:3px;}
+  mark.g{background:var(--green-mark);}
+
+  /* Study points example block */
+  .ex{
+    border-left:3px solid var(--terra-soft);
+    padding:6px 0 6px 13px;margin:10px 0 0;
+  }
+  .ex .en-line{margin:0 0 2px;}
+  .ex .ko-line{margin:0;}
+  .badge{
+    display:inline-block;font-family:var(--ko);font-size:.74rem;font-weight:700;
+    padding:3px 9px;border-radius:999px;margin-bottom:6px;
+  }
+  .badge.fn{background:var(--terra-soft);color:var(--terra);}
+  .badge.fm{background:var(--teal-soft);color:var(--teal);}
+
+  /* dialogue */
+  .dlg{margin:2px 0;}
+  .dlg .turn{display:flex;gap:9px;margin:5px 0;align-items:flex-start;}
+  .spk{
+    flex:0 0 auto;font-family:var(--ko);font-weight:700;font-size:.78rem;
+    background:var(--teal-soft);color:var(--teal);
+    border-radius:7px;padding:2px 7px;min-width:26px;text-align:center;
+    margin-top:3px;
+  }
+  .spk.b{background:var(--terra-soft);color:var(--terra);}
+  .line-en{font-family:var(--en);font-size:1.04rem;color:var(--ink);}
+  .line-ko{font-family:var(--ko);font-size:.88rem;color:var(--ink-soft);margin-top:1px;}
+  .ko-hide .line-ko, .ko-hide .ko-tr{display:none;}
+
+  /* reading */
+  .para{margin:0 0 6px;}
+  .para .pnum{
+    font-family:var(--en);font-style:italic;color:var(--terra);font-weight:600;
+    font-size:.9rem;margin-right:6px;
+  }
+  .ptext{font-family:var(--en);font-size:1.07rem;line-height:1.75;color:var(--ink);}
+  .ko-tr{font-family:var(--ko);font-size:.9rem;color:var(--ink-soft);margin-top:6px;line-height:1.7;}
+  .reader-name{
+    font-family:var(--en);font-weight:700;font-style:italic;color:var(--teal);
+    font-size:1.05rem;margin:4px 0 6px;
+  }
+
+  /* details / 문장분석 */
+  details.analy{
+    margin-top:13px;border-top:1px dashed var(--line);padding-top:11px;
+  }
+  details.analy>summary{
+    list-style:none;cursor:pointer;
+    font-family:var(--ko);font-weight:700;font-size:.9rem;color:var(--teal);
+    display:flex;align-items:center;gap:6px;user-select:none;
+  }
+  details.analy>summary::-webkit-details-marker{display:none;}
+  details.analy>summary .chev{transition:.2s;display:inline-block;color:var(--ink-soft);}
+  details.analy[open]>summary .chev{transform:rotate(90deg);}
+  .analy-body{padding:10px 2px 2px;}
+  .analy-item{margin:0 0 11px;font-size:.9rem;line-height:1.65;}
+  .analy-item:last-child{margin-bottom:0;}
+  .analy-item .pt{font-family:var(--en);font-weight:600;color:var(--ink);}
+  .analy-item .ko{font-family:var(--ko);color:var(--ink-soft);}
+  .gh{
+    display:block;font-family:var(--ko);font-weight:700;color:var(--teal);
+    font-size:.9rem;margin-bottom:2px;
+  }
+  .gh .tag{
+    font-size:.7rem;background:var(--green-mark);color:var(--teal);
+    padding:1px 7px;border-radius:999px;margin-right:6px;vertical-align:middle;
+  }
+
+  /* toggle button */
+  .toggle-bar{
+    display:flex;justify-content:flex-end;margin:-6px 0 14px;
+  }
+  .ko-toggle{
+    border:1px solid var(--line);background:var(--paper-2);
+    font-family:var(--ko);font-weight:700;font-size:.84rem;color:var(--teal);
+    padding:7px 14px;border-radius:999px;cursor:pointer;
+    box-shadow:var(--shadow);transition:.15s;
+  }
+  .ko-toggle.off{color:var(--ink-soft);}
+  .ko-toggle .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:7px;vertical-align:middle;}
+  .ko-toggle.off .dot{background:var(--ink-soft);}
+
+  /* grammar tab supplementary */
+  .mini{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    padding:13px 14px;margin:10px 0 0;
+  }
+  .mini h4{margin:0 0 5px;font-family:var(--ko);font-size:.92rem;color:var(--terra);font-weight:700;}
+  .mini p{margin:3px 0;font-size:.88rem;line-height:1.6;}
+  .mini .eg{font-family:var(--en);color:var(--ink);}
+  .mini .egk{font-family:var(--ko);color:var(--ink-soft);font-size:.84rem;}
+  .alt{font-family:var(--ko);font-size:.86rem;color:var(--ink-soft);margin-top:8px;}
+  .alt b{color:var(--teal);}
+  .alt .a{font-family:var(--en);color:var(--ink);}
+
+  /* flashcards */
+  .filter-bar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+  .chip{
+    border:1px solid var(--line);background:var(--paper-2);
+    font-family:var(--ko);font-weight:700;font-size:.82rem;color:var(--ink-soft);
+    padding:6px 13px;border-radius:999px;cursor:pointer;transition:.15s;
+  }
+  .chip.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .flip-all{
+    margin-left:auto;border:1px solid var(--terra-soft);background:var(--paper-2);
+    font-family:var(--ko);font-weight:700;font-size:.82rem;color:var(--terra);
+    padding:6px 13px;border-radius:999px;cursor:pointer;
+  }
+  .deck{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;}
+  .fc{
+    perspective:900px;height:104px;cursor:pointer;
+  }
+  .fc-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .5s;transform-style:preserve-3d;
+  }
+  .fc.flipped .fc-inner{transform:rotateY(180deg);}
+  .fc-face{
+    position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    border:1px solid var(--line);border-radius:14px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:8px;text-align:center;box-shadow:var(--shadow);
+  }
+  .fc-front{background:var(--paper-2);}
+  .fc-front .w{font-family:var(--en);font-weight:600;font-size:1.12rem;color:var(--ink);}
+  .fc-front .pos{font-family:var(--ko);font-size:.7rem;color:var(--ink-soft);margin-top:3px;}
+  .fc-back{background:var(--teal);color:#fff;transform:rotateY(180deg);}
+  .fc-back .m{font-family:var(--ko);font-weight:500;font-size:.96rem;}
+  .fc-hint{font-family:var(--ko);font-size:.62rem;color:var(--ink-soft);position:absolute;bottom:6px;left:0;right:0;}
+  .fc-back .fc-hint{color:rgba(255,255,255,.6);}
+
+  /* quiz */
+  .quiz-top{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:12px 16px;margin-bottom:16px;box-shadow:var(--shadow);
+  }
+  .score{font-family:var(--ko);font-weight:700;color:var(--ink);}
+  .score b{color:var(--terra);font-family:var(--en);font-size:1.2rem;}
+  .reset{
+    border:1px solid var(--terra-soft);background:var(--paper);color:var(--terra);
+    font-family:var(--ko);font-weight:700;font-size:.82rem;padding:7px 14px;
+    border-radius:999px;cursor:pointer;
+  }
+  .q{margin:0 0 16px;}
+  .q .qn{font-family:var(--ko);font-weight:700;font-size:.96rem;margin-bottom:9px;color:var(--ink);}
+  .q .qn .num{color:var(--terra);font-family:var(--en);margin-right:6px;}
+  .q .qn .qen{font-family:var(--en);}
+  .opt{
+    display:block;width:100%;text-align:left;
+    border:1px solid var(--line);background:var(--paper-2);
+    font-family:var(--ko);font-size:.92rem;color:var(--ink);
+    padding:11px 14px;border-radius:11px;margin:7px 0;cursor:pointer;transition:.12s;
+  }
+  .opt .oen{font-family:var(--en);}
+  .opt:hover:not(.locked){border-color:var(--teal);}
+  .opt.correct{background:#E4F3EA;border-color:var(--teal);color:var(--teal);font-weight:700;}
+  .opt.wrong{background:#F7E2DA;border-color:var(--terra);color:var(--terra);font-weight:700;}
+  .opt.locked{cursor:default;}
+  .mk{float:right;font-weight:700;}
+  .expl{
+    display:none;margin-top:8px;font-family:var(--ko);font-size:.86rem;
+    background:var(--paper);border-left:3px solid var(--teal);
+    padding:9px 12px;border-radius:0 9px 9px 0;color:var(--ink-soft);line-height:1.6;
+  }
+  .expl.show{display:block;}
+  .expl .en{font-family:var(--en);color:var(--ink);}
+
+  footer{
+    text-align:center;padding:34px 16px 26px;color:var(--ink-soft);
+    font-family:var(--ko);font-size:.86rem;letter-spacing:.05em;
+    border-top:1px solid var(--line);max-width:760px;margin:30px auto 0;
+  }
+  footer .mark{color:var(--terra);font-weight:700;}
+
+  @media(max-width:480px){
+    header h1{font-size:1.7rem;}
+    .deck{grid-template-columns:1fr 1fr;}
+    .ptext,.line-en{font-size:1rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">중3 천재(이재영) · Lesson 3</div>
+  <h1>Be Positive, Be Happy</h1>
+  <div class="sub">— 에듀케레 영수학원 —</div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner" id="tabs">
+    <button class="tab active" data-tab="goals">학습 목표</button>
+    <button class="tab" data-tab="dialogue">대화문</button>
+    <button class="tab" data-tab="reading">본문</button>
+    <button class="tab" data-tab="grammar">표현·문법</button>
+    <button class="tab" data-tab="words">단어장</button>
+    <button class="tab" data-tab="quiz">확인문제</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ============ TAB 1 : STUDY POINTS ============ -->
+  <section class="panel active" id="goals">
+    <div class="panel-head">
+      <h2>Study Points</h2>
+      <p>이 단원에서 꼭 익혀야 할 의사소통 기능 2가지와 목표 어법 2가지예요.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">💬</span>의사소통 기능 · 주제 소개하기</div>
+      <span class="badge fn">Function 1</span>
+      <div class="ex">
+        <div class="en-line"><mark>I'd like to talk about</mark> Frida Kahlo.</div>
+        <div class="ko-line">저는 Frida Kahlo에 대해 말하려고 합니다.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">💬</span>의사소통 기능 · 이유 묻고 답하기</div>
+      <span class="badge fn">Function 2</span>
+      <div class="dlg">
+        <div class="turn"><span class="spk b">A</span><div><div class="line-en">I want to spend more time on social media.</div><div class="line-ko">나는 누리 소통망(SNS)에 더 많은 시간을 쓰고 싶어.</div></div></div>
+        <div class="turn"><span class="spk">B</span><div><div class="line-en"><mark>What makes you say that?</mark></div><div class="line-ko">왜 그렇게 말을 하니?</div></div></div>
+        <div class="turn"><span class="spk b">A</span><div><div class="line-en">I can make more friends from around the world.</div><div class="line-ko">전 세계의 친구들을 더 많이 사귈 수 있거든.</div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic teal">📐</span>언어 형식 · 현재완료진행형</div>
+      <span class="badge fm">Form 1</span>
+      <div class="ex">
+        <div class="en-line">Jake <mark>has been sleeping</mark> all afternoon.</div>
+        <div class="ko-line">Jake는 오후 내내 잠을 자고 있다.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic teal">📐</span>언어 형식 · so ~ that 구문</div>
+      <span class="badge fm">Form 2</span>
+      <div class="ex">
+        <div class="en-line">It was <mark>so</mark> cold <mark>that</mark> I put on my coat.</div>
+        <div class="ko-line">너무 추워서 나는 외투를 입었다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 2 : DIALOGUE ============ -->
+  <section class="panel" id="dialogue">
+    <div class="panel-head">
+      <h2>All the Dialogue</h2>
+      <p>교과서 Listen &amp; Speak의 모든 대화예요. 각 카드 아래 <b>📝 문장분석</b>을 펼쳐 핵심 구문을 확인하세요.</p>
+    </div>
+
+    <div class="toggle-bar">
+      <button class="ko-toggle" data-scope="dialogue"><span class="dot"></span>한글 보기 ON</button>
+    </div>
+
+    <div id="dialogue-body">
+
+      <div class="card">
+        <div class="card-title"><span class="ic teal">🎧</span>Listen · Get Ready</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk b">A</span><div><div class="line-en"><mark>I'd like to talk about</mark> true friendship.</div><div class="line-ko">저는 진정한 우정에 관해 말씀드리려고 합니다.</div></div></div>
+          <div class="turn"><span class="spk">B</span><div><div class="line-en">I think it's going to be a boring talk show.</div><div class="line-ko">지루한 토크쇼가 될 것 같아.</div></div></div>
+          <div class="turn"><span class="spk">C</span><div><div class="line-en"><mark>What makes you say so?</mark></div><div class="line-ko">왜 그렇게 말하니?</div></div></div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>주제 소개하기</span><span class="pt">I'd like to talk about ~</span> <span class="ko">— 함께 이야기하려는 주제를 소개할 때 쓰는 표현. '~에 대해 말하려고 합니다'.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>이유 묻기</span><span class="pt">What makes you say so?</span> <span class="ko">— 상대방에게 이유를 묻는 표현. '왜 그렇게 말하니?'.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="ic teal">🎧</span>Listen and Answer · Talk</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk">W</span><div>
+            <div class="line-en">Today, <mark>I'd like to talk to you about</mark> teen stress. What <mark class="g">makes</mark> you feel the most stressed? About 9,000 teens answered this question. <mark class="g">As</mark> you can see, schoolwork was the most common cause of stress. Over half of the students said schoolwork stresses them the most. Problems with friends <mark class="g">took second place</mark> with 15.3%. <mark class="g">Next</mark> came family and worries about the future. 8.2% of the students said they <mark class="g">get stressed</mark> <mark class="g">because of</mark> their appearance.</div>
+            <div class="line-ko">오늘, 저는 여러분에게 십 대들의 스트레스에 관해 말씀드리려고 합니다. 여러분에게 가장 많이 스트레스를 주는 것은 무엇인가요? 약 9,000명의 십 대들이 이 질문에 답했습니다. 보시다시피, 학업이 스트레스의 가장 흔한 원인이었습니다. 절반이 넘는 학생들은 학업이 스트레스를 가장 많이 준다고 말했습니다. 친구들과의 문제는 15.3%로 2위를 차지했습니다. 다음은 가족, 그리고 장래에 대한 걱정 순이었습니다. 8.2%의 학생들은 외모 때문에 스트레스를 받는다고 말했습니다.</div>
+          </div></div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>주제 소개하기</span><span class="pt">I'd like to talk to you about ~.</span> <span class="ko">— 주제를 소개할 때 쓰는 표현. '저는 여러분에게 ~에 대해 말하려고 합니다'.</span></div>
+            <div class="analy-item"><span class="pt">make + 목적어 + 동사원형</span> <span class="ko">: ~을 …하도록 하다. you가 목적어, feel이 목적격 보어로 쓰였다.</span></div>
+            <div class="analy-item"><span class="pt">접속사 as</span> <span class="ko">: ~하듯이, ~하다시피.</span></div>
+            <div class="analy-item"><span class="pt">take second place</span> <span class="ko">: 2등을 차지하다.</span></div>
+            <div class="analy-item"><span class="pt">도치</span> <span class="ko">: 부사 Next가 문두로 나오면서 주어(family and worries about the future)와 동사(came)가 도치되었다.</span></div>
+            <div class="analy-item"><span class="pt">get + 과거분사</span> <span class="ko">: ~되다. get stressed는 '스트레스를 받다'.</span></div>
+            <div class="analy-item"><span class="pt">because of</span> <span class="ko">: ~ 때문에. 뒤에 명사(their appearance)나 동명사가 온다.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="ic">🗣️</span>Dialog</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk">W</span><div><div class="line-en">What are you doing, Oliver?</div><div class="line-ko">뭐 하고 있니, Oliver?</div></div></div>
+          <div class="turn"><span class="spk b">B</span><div><div class="line-en">I'm studying for the math test, Mom. Grades stress me out.</div><div class="line-ko">수학 시험이 있어서 공부하고 있어요, 엄마. 성적이 제게 스트레스를 줘요.</div></div></div>
+          <div class="turn"><span class="spk">W</span><div><div class="line-en">I understand. I <mark class="g">used to</mark> feel that way, too.</div><div class="line-ko">이해한단다. 나도 그렇게 느끼곤 했거든.</div></div></div>
+          <div class="turn"><span class="spk b">B</span><div><div class="line-en">Really? I didn't know that.</div><div class="line-ko">정말요? 그러신 줄 몰랐어요.</div></div></div>
+          <div class="turn"><span class="spk">W</span><div><div class="line-en">Yeah, but a little stress was helpful for me.</div><div class="line-ko">그래, 하지만 약간의 스트레스는 내게 도움이 되기도 했단다.</div></div></div>
+          <div class="turn"><span class="spk b">B</span><div><div class="line-en"><mark>What makes you say that?</mark></div><div class="line-ko">왜 그렇게 말씀하세요?</div></div></div>
+          <div class="turn"><span class="spk">W</span><div><div class="line-en">I got stressed when I had an exam, but at the same time it made me focus and try harder.</div><div class="line-ko">나는 시험이 있을 때 스트레스를 받았지만, 동시에 그 스트레스가 나를 집중하고 더 열심히 노력하게 했거든.</div></div></div>
+          <div class="turn"><span class="spk b">B</span><div><div class="line-en">I see. Did stress help you in other ways?</div><div class="line-ko">그렇군요. 스트레스가 다른 방식으로 엄마에게 도움이 된 적이 있나요?</div></div></div>
+          <div class="turn"><span class="spk">W</span><div><div class="line-en">Yes, it <mark class="g">helped</mark> improve my memory.</div><div class="line-ko">그럼, 내 기억력을 높이는 데 도움을 주었단다.</div></div></div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">used to</span> <span class="ko">: ~하곤 했다. 더 이상은 사실이 아닌 과거의 습관·상태를 말할 때 'used to + 동사원형'.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>이유 묻기</span><span class="pt">What makes you say that?</span> <span class="ko">— '왜 그렇게 말하니?'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 when</span> <span class="ko">: ~할 때 / <span class="en">at the same time</span> : 동시에.</span></div>
+            <div class="analy-item"><span class="pt">make + 목적어 + 동사원형</span> <span class="ko">: 목적격 보어 자리에 두 개의 동사원형 focus와 try가 병렬구조를 이룬다.</span></div>
+            <div class="analy-item"><span class="pt">help + 동사원형/to부정사</span> <span class="ko">: 본문에서는 동사원형 improve가 사용됨. to improve로도 가능.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="ic">🗣️</span>Listen More</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk b">B1</span><div><div class="line-en">Today, <mark>let's talk about</mark> the class T-shirt. We <mark class="g">have to</mark> decide on the design.</div><div class="line-ko">오늘은 학급 티셔츠에 관해 이야기해 보자. 우리는 디자인을 정해야 해.</div></div></div>
+          <div class="turn"><span class="spk">G</span><div><div class="line-en"><mark class="g">Let me show</mark> you some designs on the screen.</div><div class="line-ko">화면으로 몇 가지 디자인을 보여 줄게.</div></div></div>
+          <div class="turn"><span class="spk b">B2</span><div><div class="line-en">We <mark class="g">have to</mark> choose a T-shirt with short sleeves.</div><div class="line-ko">우리는 반팔 티셔츠를 골라야 해.</div></div></div>
+          <div class="turn"><span class="spk b">B1</span><div><div class="line-en"><mark>What makes you say that?</mark></div><div class="line-ko">무슨 이유로 그렇게 말하는 거야?</div></div></div>
+          <div class="turn"><span class="spk b">B2</span><div><div class="line-en"><mark class="g">Because</mark> we'll wear the T-shirt on Sports Day. It's in June.</div><div class="line-ko">우리가 체육대회 때 티셔츠를 입기 때문이야. 그건 6월에 열려.</div></div></div>
+          <div class="turn"><span class="spk">G</span><div><div class="line-en"><mark class="g">That makes sense.</mark> <mark class="g">What about</mark> this green one?</div><div class="line-ko">그 말이 맞아. 이 초록색 티셔츠는 어때?</div></div></div>
+          <div class="turn"><span class="spk b">B2</span><div><div class="line-en">I like it. The bee on the T-shirt is so cute.</div><div class="line-ko">나는 마음에 들어. 티셔츠에 있는 벌 그림이 정말 귀엽다.</div></div></div>
+          <div class="turn"><span class="spk">G</span><div><div class="line-en">And it's not expensive.</div><div class="line-ko">그리고 비싸지 않아.</div></div></div>
+          <div class="turn"><span class="spk b">B1</span><div><div class="line-en">Yes. I think it's the best <mark class="g">one</mark>.</div><div class="line-ko">맞아. 그게 제일 좋겠어.</div></div></div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>주제 소개하기</span><span class="pt">Let's talk about ~</span> <span class="ko">— '~에 관해 이야기해 보자'.</span></div>
+            <div class="analy-item"><span class="pt">has/have to</span> <span class="ko">: ~해야만 한다. 뒤에 동사원형. decide on은 '~을 결정하다'.</span></div>
+            <div class="analy-item"><span class="pt">Let me + 동사원형</span> <span class="ko">: 내가 ~할게. show는 간접목적어(you) + 직접목적어(some designs)를 취한다.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>이유 묻기</span><span class="pt">What makes you say that?</span> <span class="ko">— '왜 그렇게 말하니?'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 because</span> <span class="ko">: 왜냐하면, ~하기 때문에. because of와 달리 뒤에 '주어 + 동사'의 절이 온다.</span></div>
+            <div class="analy-item"><span class="pt">That makes sense.</span> <span class="ko">: 네 말이 맞아, 일리가 있어. / <span class="en">What about ~?</span> : ~은 어때? (How about ~?)</span></div>
+            <div class="analy-item"><span class="pt">부정대명사 one</span> <span class="ko">: 앞에 나온 T-shirt를 가리키는 부정대명사.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="ic">🎤</span>Speak · I'd Like to Talk About Frida Kahlo</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk b">A</span><div><div class="line-en">Hi, Today, <mark>I'd like to talk about</mark> Frida Kahlo. She was a Mexican painter. One of her most well-known paintings is <i>Viva la Vida</i>.</div><div class="line-ko">안녕하세요. 오늘 저는 Frida Kahlo에 관해 말씀드리겠습니다. 그녀는 멕시코의 화가였습니다. 그녀의 가장 유명한 그림 중 하나는 '삶이여 만세(Viva la Vida)'입니다.</div></div></div>
+        </div>
+        <div class="ko-line" style="margin-top:12px;font-weight:700;color:var(--teal);">예시 발표</div>
+        <div class="dlg">
+          <div class="turn"><span class="spk b">A</span><div><div class="line-en">Hi. Today, let me talk about Park Gyeongri. She was a famous Korean writer. She's well known for her novel, <i>Toji</i>. It has been made into a movie, TV drama series, and an opera.</div><div class="line-ko">안녕하세요. 오늘 저는 박경리에 관해 말씀드리겠습니다. 그녀는 한국의 작가였습니다. 그녀는 소설 '토지'로 잘 알려져 있습니다. 그것은 영화, TV 드라마, 그리고 오페라로 만들어졌습니다.</div></div></div>
+          <div class="turn"><span class="spk b">A</span><div><div class="line-en">Hi. Today, I'd like to talk about Antoni Gaudí. He was a Spanish architect. La Sagrada Família is one of his famous works.</div><div class="line-ko">안녕하세요. 오늘 저는 Antoni Gaudí에 관해 말씀드리겠습니다. 그는 스페인의 건축가였습니다. 사그라다 파밀리아 성당은 그의 가장 유명한 작품 중 하나입니다.</div></div></div>
+          <div class="turn"><span class="spk b">A</span><div><div class="line-en">Hi. Today, I'd like to talk about Charlie Chaplin. He was an English actor. <i>Modern Times</i> is one of his famous movies.</div><div class="line-ko">안녕하세요. 오늘 저는 Charlie Chaplin에 관해 말씀드리겠습니다. 그는 영국의 배우였습니다. '모던 타임즈(Modern Times)'는 그의 가장 유명한 작품 중 하나입니다.</div></div></div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>주제 소개하기</span><span class="pt">I'd like to talk about ~</span> <span class="ko">— '~에 대해서 말하고 싶다'. talk about 대신 introduce, discuss, mention도 가능.</span></div>
+            <div class="analy-item"><span class="ko">대체 표현: </span><span class="pt">Let's talk about ~ / Let me say something about ~ / I'm going to talk about ~ / Why don't we say something about ~</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">의사소통</span>이유 묻기 — 대체 표현</span><span class="pt">Why do you ~? / How do you come to ~? / Can you tell me the reason why? / How come you ~? / What is your reason for ~?</span></div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ TAB 3 : READING ============ -->
+  <section class="panel" id="reading">
+    <div class="panel-head">
+      <h2>Reading · Say Goodbye to Stress</h2>
+      <p>단락마다 <b>📝 N단락 문장분석</b>을 펼쳐 구문 해설을 확인하세요.</p>
+    </div>
+
+    <div class="toggle-bar">
+      <button class="ko-toggle" data-scope="reading"><span class="dot"></span>한글 보기 ON</button>
+    </div>
+
+    <div id="reading-body">
+
+      <div class="card">
+        <div class="para">
+          <p class="ptext"><span class="pnum">①</span><mark class="g">Some</mark> people spend time with friends when they <mark class="g">feel</mark> low. <mark class="g">Others</mark> eat special foods to feel better. Still others simply sleep <mark class="g">for a while</mark>. How do you <mark class="g">deal with</mark> stress? <mark class="g">Here are</mark> some stories about people <mark class="g">who</mark> suggest different ways.</p>
+          <div class="ko-tr">어떤 사람들은 울적할 때 친구들과 시간을 보낸다. 다른 사람들은 기분이 좋아지도록 특별한 음식을 먹는다. 또 다른 사람들은 그저 잠시 잠을 자기도 한다. 여러분은 스트레스를 어떻게 다루는가? 여기 다양한 방법을 제안하는 사람들의 이야기가 있다.</div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 도입 단락 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">Some … Others … Still others</span> <span class="ko">: 전체 중 일부(some) / 또 다른 일부(others) / 또 그 나머지 중 일부(still others).</span></div>
+            <div class="analy-item"><span class="pt">접속사 when</span> <span class="ko">: ~할 때. 시간의 부사절을 이끈다.</span></div>
+            <div class="analy-item"><span class="pt">feel + 형용사</span> <span class="ko">: ~한 느낌이 들다. low는 형용사로 '기운이 없는, 처지는'.</span></div>
+            <div class="analy-item"><span class="pt">to feel (부사적 용법·목적)</span> <span class="ko">: ~하기 위해서. '기분이 더 좋아지기 위해서'.</span></div>
+            <div class="analy-item"><span class="pt">for a while</span> <span class="ko">: 잠시 동안 / <span class="en">deal with</span> : ~을 다루다, 처리하다.</span></div>
+            <div class="analy-item"><span class="pt">Here + be동사</span> <span class="ko">: 여기 ~이 있다. 주어가 복수(some stories)라 are.</span></div>
+            <div class="analy-item"><span class="pt">주격 관계대명사 who</span> <span class="ko">: 선행사 people을 수식. 복수라 동사도 suggest. who = that.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="reader-name">본문 1 · Mina (15, Daejeon)</div>
+        <div class="para">
+          <p class="ptext">Sometimes my friends <mark class="g">give</mark> me stress <mark class="g">by saying</mark> bad things about me, breaking promises, or arguing over small things. When this happens, I watch horror movies! Good horror movies are <mark>so</mark> scary <mark>that</mark> I scream a lot. I guess that <mark class="g">screaming</mark> at the top of my lungs <mark class="g">helps</mark> me feel better. Also, <mark class="g">thanks to</mark> scary scenes and sound effects, I can forget about <mark class="g">what</mark> bothers me. <mark>I've been using</mark> this method for the past several months, and it really <mark class="g">works</mark>.</p>
+          <div class="ko-tr">때때로 내 친구들은 나에 관해 나쁜 말을 하거나, 약속을 어기거나, 혹은 사소한 일을 두고 언쟁을 하며 내게 스트레스를 준다. 이럴 때, 나는 공포 영화를 본다! 훌륭한 공포 영화는 너무 무서워서 나는 소리를 많이 지르게 된다. 있는 힘껏 소리 지르는 것은 내 기분이 나아지는 데 도움이 된다고 생각한다. 또한, 무서운 장면과 음향 효과 덕분에 나를 괴롭히는 것들을 잊을 수 있다. 나는 지난 몇 달 간 이 방법을 써 오고 있는데, 효과가 아주 좋다.</div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 1단락 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">give + 간접목적어 + 직접목적어</span> <span class="ko">: ~에게 …을 주다. me(간접)+stress(직접). 'give + 직접목적어 + to + 간접목적어'도 가능.</span></div>
+            <div class="analy-item"><span class="pt">by + -ing</span> <span class="ko">: ~함으로써. 동명사 saying, breaking, arguing이 'A, B, or C' 병렬구조.</span></div>
+            <div class="analy-item"><span class="pt">접속사 when</span> <span class="ko">: ~할 때.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>so ~ that 구문</span><span class="pt">are so scary that I scream a lot</span> <span class="ko">— '너무 ~해서 …하다'. be동사의 보어 자리라 so와 that 사이에 형용사 scary. 원인(너무 무섭다) → 결과(소리를 지르게 된다).</span></div>
+            <div class="analy-item"><span class="pt">접속사 that</span> <span class="ko">: 동사 guess의 목적어절을 이끈다. 생략 가능.</span></div>
+            <div class="analy-item"><span class="pt">동명사 screaming</span> <span class="ko">: 주어 자리라 동사는 단수 helps. to scream으로도 가능. at the top of one's lungs = '목청껏, 큰 소리로'.</span></div>
+            <div class="analy-item"><span class="pt">help + 목적어 + 동사원형/to부정사</span> <span class="ko">: ~가 …하도록 돕다. feel(=to feel).</span></div>
+            <div class="analy-item"><span class="pt">thanks to</span> <span class="ko">: ~ 덕분에. 뒤에 명사/동명사. due to / owing to / because of와 유사.</span></div>
+            <div class="analy-item"><span class="pt">관계대명사 what</span> <span class="ko">: 선행사를 포함. '~하는 것'. what bothers me = '나를 괴롭히는 것'.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>현재완료진행형</span><span class="pt">I've been using ~ for the past several months</span> <span class="ko">— &lt;has[have] been + -ing&gt;. 과거부터 현재까지 계속 이 방법을 써 오고 있음. for와 함께 기간을 나타냄.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="reader-name">본문 2 · Junho (14, Yeosu)</div>
+        <div class="para">
+          <p class="ptext">My uncle <mark class="g">graduated from</mark> college two years ago. He lives with my family, and he's <mark>been looking</mark> for a job for some time. I know that he's <mark class="g">stressed out</mark>, but he always <mark class="g">tries to</mark> be positive <mark class="g">by going</mark> fishing. He never <mark class="g">gets upset</mark> when he doesn't catch <mark class="g">any</mark> fish. He says, "<mark class="g">While</mark> I fish, I'm <mark>so</mark> focused <mark>that</mark> I can leave all my worries behind. <mark class="g">Besides</mark>, it <mark class="g">teaches</mark> me to be patient." I'm sure that <mark class="g">focusing on</mark> one thing <mark class="g">helps</mark> us forget about something else.</p>
+          <div class="ko-tr">우리 삼촌은 2년 전에 대학을 졸업했다. 삼촌은 우리 가족과 함께 살고 있고, 얼마 전부터 직장을 구하고 있다. 나는 삼촌이 스트레스를 받고 있지만 낚시를 다니며 긍정적으로 지내려고 항상 노력한다는 것을 안다. 물고기를 한 마리도 잡지 못했을 때에도 삼촌은 절대 속상해 하지 않는다. 삼촌은 "낚시하는 동안, 나는 아주 몰입해서 모든 걱정을 잊을 수 있어. 게다가 낚시는 나에게 인내를 가르쳐 준단다."라고 말한다. 한 가지 일에 집중하는 것이 다른 무언가를 잊는 데 도움이 된다고 나는 확신한다.</div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 2단락 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">graduate from</span> <span class="ko">: ~을 졸업하다.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>현재완료진행형</span><span class="pt">has been looking for ~ for some time</span> <span class="ko">— 과거부터 현재까지 직장을 찾아오고 있음. look for = '~을 찾다', for some time = '얼마 전부터'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 that</span> <span class="ko">: 동사 know의 목적어절. 생략 가능 / <span class="en">be stressed out</span> : 스트레스를 받다.</span></div>
+            <div class="analy-item"><span class="pt">빈도부사 always / never</span> <span class="ko">: '항상' / '절대 ~아닌'. 일반동사 앞, be동사·조동사 뒤. 본문은 모두 일반동사 앞.</span></div>
+            <div class="analy-item"><span class="pt">try + to부정사</span> <span class="ko">: ~하려고 노력하다. (try + 동명사 = 시험 삼아 ~해보다)</span></div>
+            <div class="analy-item"><span class="pt">by + -ing</span> <span class="ko">: ~함으로써. by going fishing = '낚시를 다님으로써'. go + -ing = '~하러 가다'.</span></div>
+            <div class="analy-item"><span class="pt">get + 형용사</span> <span class="ko">: ~한 상태가 되다. get upset = 속상해하다 / <span class="en">any</span> : 부정문·의문문에서 '무슨, 어떤'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 while</span> <span class="ko">: ~하는 동안에. 뒤에 '주어 + 동사'의 절(I fish).</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>so ~ that 구문</span><span class="pt">I'm so focused that I can leave all my worries behind</span> <span class="ko">— so와 that 사이에 형용사 focused. leave ~ behind = '~을 남겨 두고 잊다'.</span></div>
+            <div class="analy-item"><span class="pt">Besides</span> <span class="ko">: 게다가 (Moreover, Furthermore, In addition).</span></div>
+            <div class="analy-item"><span class="pt">teach + 목적어 + to부정사</span> <span class="ko">: ~가 …하도록 가르치다. me + to be patient.</span></div>
+            <div class="analy-item"><span class="pt">I'm sure that S V</span> <span class="ko">: ~라고 확신하다 (I'm certain that ~ / I bet that ~).</span></div>
+            <div class="analy-item"><span class="pt">동명사 focusing (주어)</span> <span class="ko">: to focus로도 가능. 주어 자리라 동사는 단수 helps. focus on = '~에 집중하다'.</span></div>
+            <div class="analy-item"><span class="pt">help + 목적어 + 동사원형/to부정사</span> <span class="ko">: forget(=to forget).</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="reader-name">본문 3 · Dobin (16, Seoul)</div>
+        <div class="para">
+          <p class="ptext">My sister, a second-year student in high school, has a wonderful way <mark class="g">to stay</mark> free from stress. She feels a lot of stress from schoolwork, but my mother <mark class="g">seems to</mark> like the situation for a good reason. <mark class="g">It is because</mark> cleaning is my sister's number-one way <mark class="g">to make</mark> life better! When she's <mark>so</mark> stressed <mark>that</mark> her life <mark class="g">looks</mark> gloomy, she cleans her room. She says, "<mark class="g">As</mark> I clean my room, I <mark class="g">feel like</mark> I'm also relieving stress. When my room <mark class="g">looks</mark> tidy, my life looks brighter."</p>
+          <div class="ko-tr">고등학교 2학년인 우리 누나에게는 스트레스에서 벗어나는 훌륭한 방법이 있다. 누나가 학업 때문에 많은 스트레스를 받지만, 그럴 만한 이유로 우리 어머니는 그 상황을 좋아하시는 것 같다. 그것은 바로, 청소가 누나의 삶을 향상하는 최고의 방법이기 때문이다. 스트레스를 너무 많이 받아서 인생이 우울해 보일 때, 누나는 방을 청소한다. 누나는 "방을 청소하면서 스트레스도 해소되는 것 같아. 내 방이 깔끔해 보이면 내 삶도 더 밝아 보여."라고 말한다.</div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 3단락 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">동격의 콤마</span> <span class="ko">: My sister = a second-year student in high school. 두 명사구가 동격.</span></div>
+            <div class="analy-item"><span class="pt">to부정사의 형용사적 용법</span> <span class="ko">: to stay, to make 모두 앞의 명사 way를 수식. stay free from = '~으로부터 벗어나다'. make + 목적어 + 형용사 = '~을 …한 상태로 만들다'(make life better).</span></div>
+            <div class="analy-item"><span class="pt">seem + to부정사</span> <span class="ko">: ~인 것 같다 (= It seems that S V). for a good reason = '합당한 이유로'.</span></div>
+            <div class="analy-item"><span class="pt">It is because + S V</span> <span class="ko">: 그것은 바로 ~ 때문이다. 뒤에 이유·원인이 온다.</span></div>
+            <div class="analy-item"><span class="pt">접속사 When</span> <span class="ko">: ~할 때.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>so ~ that 구문</span><span class="pt">she's so stressed that her life looks gloomy</span> <span class="ko">— so와 that 사이에 형용사 stressed. 원인(너무 스트레스를 받아서) → 결과(인생이 우울해 보인다).</span></div>
+            <div class="analy-item"><span class="pt">look + 형용사</span> <span class="ko">: ~처럼 보이다. 보어 자리에 부사가 오지 않음에 유의(gloomy, tidy, brighter).</span></div>
+            <div class="analy-item"><span class="pt">접속사 As</span> <span class="ko">: ~할 때, ~하는 동안. 뒤에 완전한 절(I clean) / <span class="en">feel like + S V</span> : ~한 느낌이 들다.</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="reader-name">본문 4 · Yulia (14, Ansan)</div>
+        <div class="para">
+          <p class="ptext"><mark class="g">Let me tell you</mark> <mark class="g">what</mark> my mother does about her stress. She <mark class="g">feels</mark> stressed by all the things <mark class="g">she has to do</mark> at work and at home. When she's under stress, she writes "Me Time" on her calendar. This means she <mark class="g">takes some time out</mark> for herself. She <mark class="g">reads</mark> a book, watches a movie, or talks with her friends. She says, "It doesn't really matter what I do, <mark class="g">as long as</mark> it's something I like. <mark>I've been writing</mark> 'Me Time' on my calendar for two months, and I feel much better." <mark class="g">Which</mark> methods will work for you? Try some of these ideas yourself, and find your best way <mark class="g">to say</mark> goodbye to stress.</p>
+          <div class="ko-tr">우리 어머니께서 스트레스를 어떻게 다루시는지 소개하려고 한다. 어머니는 직장과 집에서 해야 하는 온갖 일로 인해 스트레스를 받으신다. 스트레스를 받을 때면 어머니는 달력에 '나만의 시간'이라고 적으신다. 이것은 어머니 자신을 위해 잠깐 시간을 낸다는 의미이다. 어머니는 책을 읽거나, 영화를 보거나, 친구들과 이야기를 나누신다. 어머니는 "내가 좋아하는 것이라면, 무엇을 하는지는 별로 중요하지 않아. 나는 두 달째 달력에 '나만의 시간'을 적어 왔고, 기분이 훨씬 좋아졌어."라고 말씀하신다. 어떤 방법이 여러분에게 효과가 있을까? 이 아이디어 중 몇 개를 직접 해 보고, 스트레스와 이별하는 자신만의 최고의 방법을 찾아라.</div>
+        </div>
+        <details class="analy">
+          <summary><span class="chev">▸</span>📝 4단락 문장분석</summary>
+          <div class="analy-body">
+            <div class="analy-item"><span class="pt">Let me tell you ~</span> <span class="ko">: ~을 말해 줄게. Let은 사역동사라 'Let + 목적어 + 동사원형'.</span></div>
+            <div class="analy-item"><span class="pt">관계대명사 what</span> <span class="ko">: 동사 tell의 직접목적어. '~하는 것'. what my mother does = '우리 엄마가 하는 것'.</span></div>
+            <div class="analy-item"><span class="pt">feel + 형용사</span> <span class="ko">: feel stressed = '스트레스를 느끼다, 받다'(stressed는 과거분사형 형용사).</span></div>
+            <div class="analy-item"><span class="pt">목적격 관계대명사의 생략</span> <span class="ko">: all the things 뒤에 that 생략. she has to do가 선행사 all the things를 수식. has to + 동사원형 = '~해야만 한다'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 when</span> <span class="ko">: ~할 때. under stress = '스트레스를 받고 있는'.</span></div>
+            <div class="analy-item"><span class="pt">접속사 that의 생략</span> <span class="ko">: means 뒤에 that 생략. take time out = '시간을 내다'. herself는 재귀대명사(주어와 동일인).</span></div>
+            <div class="analy-item"><span class="pt">병렬구조</span> <span class="ko">: reads ~ + watches ~ + or + talks ~ . 3인칭 단수 동사 세 개가 'A, B, or C'.</span></div>
+            <div class="analy-item"><span class="pt">가주어 It – 진주어</span> <span class="ko">: It이 가주어, what I do가 진주어(간접의문문절). It은 해석하지 않음.</span></div>
+            <div class="analy-item"><span class="pt">as long as + S V</span> <span class="ko">: ~하는 한, ~이기만 하다면.</span></div>
+            <div class="analy-item"><span class="pt">목적격 관계대명사의 생략</span> <span class="ko">: something 뒤에 that 생략. I like가 something을 수식.</span></div>
+            <div class="analy-item"><span class="gh"><span class="tag">목표어법</span>현재완료진행형</span><span class="pt">I've been writing 'Me Time' ~ for two months</span> <span class="ko">— 과거부터 현재까지 계속 써 오고 있음. for와 함께 기간을 나타냄.</span></div>
+            <div class="analy-item"><span class="pt">feel + 형용사</span> <span class="ko">: feel much better. much는 비교급 better를 강조(= even, still, a lot, far).</span></div>
+            <div class="analy-item"><span class="pt">의문형용사 Which</span> <span class="ko">: 명사 methods를 수식해 '어떤'. / Try ~ oneself = '직접 ~을 시도해보다'. to say는 best way를 수식하는 형용사적 용법.</span></div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ TAB 4 : GRAMMAR / EXPRESSIONS ============ -->
+  <section class="panel" id="grammar">
+    <div class="panel-head">
+      <h2>표현 &amp; 문법</h2>
+      <p>의사소통 표현 2종 · 목표 문법 2종 · 시험에 자주 나오는 어법 보충 카드</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">💬</span>의사소통 표현 1 · 주제 소개하기</div>
+      <div class="ex">
+        <div class="en-line"><mark>I'd like to talk about ~</mark></div>
+        <div class="ko-line">'~에 대해서 말하고 싶다' — 함께 대화하려는 주제를 소개할 때 쓰는 표현. talk about 대신 introduce, discuss, mention도 사용 가능.</div>
+      </div>
+      <div class="alt">
+        <b>대체 표현</b><br>
+        · <span class="a">Let's talk about ~</span> '~에 대해서 말해 보자'<br>
+        · <span class="a">Let me say something about ~</span> '~에 대해서 말할게'<br>
+        · <span class="a">I'm going to talk about ~</span> '~에 대해서 말하려고 해'<br>
+        · <span class="a">Why don't we say something about ~</span> '~에 대해서 말하는 게 어때?'
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">💬</span>의사소통 표현 2 · 이유 묻기</div>
+      <div class="ex">
+        <div class="en-line"><mark>What makes you say that?</mark></div>
+        <div class="ko-line">직역하면 '무엇이 너를 그렇게 말하게 만들었니?' → '왜 그렇게 말하니?'. 대답은 보통 <span class="en">That makes sense.</span>(네 말이 맞아) / <span class="en">I agree.</span> 등.</div>
+      </div>
+      <div class="alt">
+        <b>대체 표현</b><br>
+        · <span class="a">Why do you ~?</span> '왜 너는 ~하니?'<br>
+        · <span class="a">How do you come to ~?</span> '어떻게 ~하게 됐니?'<br>
+        · <span class="a">Can you tell me the reason why?</span> '이유를 말해줄 수 있니?'<br>
+        · <span class="a">Do you have a reason for ~?</span> '~에 대한 이유가 있니?'<br>
+        · <span class="a">How come you ~?</span> '왜 ~하니?'<br>
+        · <span class="a">What is your reason for ~?</span> '~하는 이유가 뭐니?'
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic teal">📐</span>목표 문법 1 · so ~ that 구문</div>
+      <div class="ko-line">「so + 형용사/부사 + that + 주어 + 동사」는 '너무 ~해서 …하다'라는 뜻으로 <b>원인과 결과</b>를 나타낸다. that절 다음에 결과를 쓴다.</div>
+      <div class="ex">
+        <div class="en-line">It was <mark>so</mark> cold <mark>that</mark> Han River was frozen.</div>
+        <div class="ko-line">너무 추워서 한강이 얼었다. (원인 → 결과)</div>
+      </div>
+      <div class="mini">
+        <h4>1. so ~ that + 주어 + can → enough to …</h4>
+        <p class="eg">Ted is so smart that he can find out the answer.</p>
+        <p class="eg">→ Ted is smart enough to find out the answer.</p>
+        <p class="egk">Ted는 답을 알아낼 만큼 영리하다.</p>
+      </div>
+      <div class="mini">
+        <h4>2. so … that + 주어 + can't → too … to ~</h4>
+        <p class="eg">Megan was so busy that she couldn't go out.</p>
+        <p class="eg">→ Megan was too busy to go out.</p>
+        <p class="egk">Megan은 너무 바빠서 외출할 수가 없었다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic teal">📐</span>목표 문법 2 · 현재완료진행형</div>
+      <div class="ko-line">현재완료(have + p.p.)와 진행형(be + -ing)이 합쳐진 형태로, 과거에 시작한 동작이 현재까지 진행되고 있음을 나타낸다. <b>&lt;has[have] been + -ing&gt;</b>, '~해오고 있다'.</div>
+      <div class="ex">
+        <div class="en-line">I <mark>have been studying</mark> English for 5 years.</div>
+        <div class="ko-line">나는 5년 동안 영어를 공부해 오고 있다.</div>
+      </div>
+      <div class="mini">
+        <h4>부정문 · 의문문</h4>
+        <p class="eg">부정: I haven't been waiting for him. <span class="egk">— 나는 그를 기다리고 있던 게 아니야.</span></p>
+        <p class="eg">의문: Have you been working hard? <span class="egk">— 너는 열심히 일하고 있었니?</span></p>
+      </div>
+    </div>
+
+    <div class="panel-head" style="margin-top:26px;">
+      <h2 style="font-size:1.2rem;">시험 빈출 어법 보충</h2>
+      <p>본문·구문 UP에 나온 핵심 어법들이에요.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>부정대명사 (one / another / the other / others)</div>
+      <div class="mini"><p class="eg">One is black and the other is brown. <span class="egk">— (둘 중) 하나는 검은색, 나머지 하나는 갈색.</span></p></div>
+      <div class="mini"><p class="eg">One is red, another is blue. The other is green. <span class="egk">— (셋 중) 하나 / 또 다른 하나 / 나머지 하나.</span></p></div>
+      <div class="mini"><p class="eg">Some have black hair. Others have brown hair. <span class="egk">— 일부 / 또 다른 일부(나머지 전부 아님).</span></p></div>
+      <div class="mini"><p class="eg">Some are baseballs. Others are tennis balls. The others are golf balls. <span class="egk">— 일부 / 또 다른 일부 / 나머지 전부.</span></p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>관계대명사 what</div>
+      <div class="ko-line">선행사를 포함하는 관계대명사로 '~한 것'으로 해석하며 the thing which[that]로 바꿀 수 있다. 명사절을 이끌어 문장에서 주어·목적어·보어 역할을 한다.</div>
+      <div class="mini"><p class="eg">&lt;주어&gt; What I want for Christmas is you. <span class="egk">— 내가 크리스마스에 원하는 것은 너다.</span></p>
+      <p class="eg">&lt;목적어&gt; Stop what you are doing. <span class="egk">— 네가 하고 있는 것을 멈추어라.</span></p>
+      <p class="eg">&lt;보어&gt; The result was not what they expected. <span class="egk">— 그 결과는 그들이 예상한 것이 아니었다.</span></p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>동명사 &amp; 전치사 + -ing</div>
+      <div class="ko-line">동명사는 명사처럼 주어·목적어·보어 역할을 하며, 동사 성격이 남아 목적어를 가질 수 있다.</div>
+      <div class="mini"><p class="eg">&lt;주어&gt; Climbing rocks is dangerous.</p>
+      <p class="eg">&lt;목적어&gt; John loves climbing rocks. / Tony is good at skateboarding.</p>
+      <p class="eg">&lt;보어&gt; John's hobby is climbing rocks.</p></div>
+      <div class="mini"><h4>전치사 + -ing</h4>
+      <p class="eg">by + -ing: ~함으로써 — By planting a tree, you help keep your environment healthy.</p>
+      <p class="eg">in + -ing: ~하는 동안 — In playing soccer, I am so happy.</p>
+      <p class="eg">on + -ing: ~하자마자 — On arriving home, she took a shower.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>부정대명사 some &amp; any</div>
+      <div class="mini"><h4>some — 긍정의 평서문 / 요청·권유 의문문</h4>
+      <p class="eg">I have some tickets for a play. <span class="egk">— 나는 연극 표 몇 장이 있다.</span></p>
+      <p class="eg">Can I ask you for some advice? <span class="egk">— 조언 좀 구해도 될까?(권유)</span></p></div>
+      <div class="mini"><h4>any — 부정문 / 의문문 / (긍정문) 어떤 ~라도</h4>
+      <p class="eg">I don't want any presents. <span class="egk">— 어떤 선물도 원하지 않는다.</span></p>
+      <p class="eg">You may order any dish you want. <span class="egk">— 어떤 요리라도 주문해도 된다.</span></p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>접속사 while / as 의 여러 의미</div>
+      <div class="mini"><h4>while</h4>
+      <p class="eg">~하는 동안: I fell asleep while I was watching the movie.</p>
+      <p class="eg">~인 반면(= whereas): Some sleep well while others have sleeplessness.</p>
+      <p class="eg">잠시(명사): Wait here for a while.</p></div>
+      <div class="mini"><h4>as</h4>
+      <p class="eg">시간(~할 때): As I told the story, Dave kept laughing.</p>
+      <p class="eg">이유(~때문에): As I was sleepy, I went to bed.</p>
+      <p class="eg">변화(~함에 따라): As she grew, she became pretty.</p>
+      <p class="eg">방식(~하듯이): As you can see, this is the best house.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>help의 쓰임 &amp; It is because/why</div>
+      <div class="mini"><h4>help — 3형식 / 5형식</h4>
+      <p class="eg">5형식: He helped me (to) win the contest. <span class="egk">— 목적격 보어에 동사원형/to부정사.</span></p>
+      <p class="eg">3형식: He helped (to) paint the house. <span class="egk">— 목적어에 동사원형/to부정사.</span></p></div>
+      <div class="mini"><h4>It is because ~ vs It is why ~</h4>
+      <p class="eg">It is because ~ : ~이기 때문이다(뒤에 원인). It's because he is sick.</p>
+      <p class="eg">It is why ~ : ~한 이유이다(This/That가 원인). It's why he is absent.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ic">🔎</span>관계대명사의 생략</div>
+      <div class="mini"><h4>1. 목적격 관계대명사</h4>
+      <p class="eg">Have you tried the cookies (which/that) he made? <span class="egk">— 타동사의 목적어.</span></p>
+      <p class="eg">This is the house (which/that) I was born in. <span class="egk">— 전치사의 목적어.</span></p></div>
+      <div class="mini"><h4>2. 「주격 관계대명사 + be동사」</h4>
+      <p class="eg">I enjoyed reading the novels (which were) written by Jules Verne. <span class="egk">— 진행형·수동태의 be동사와 함께 생략 가능.</span></p></div>
+    </div>
+  </section>
+
+  <!-- ============ TAB 5 : VOCABULARY ============ -->
+  <section class="panel" id="words">
+    <div class="panel-head">
+      <h2>단어장</h2>
+      <p>카드를 탭하면 뒤집혀 뜻이 나와요. 대화문 / 본문 필터와 전체 뒤집기를 사용하세요.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="chip active" data-filter="all">전체</button>
+      <button class="chip" data-filter="dlg">대화문</button>
+      <button class="chip" data-filter="read">본문</button>
+      <button class="flip-all" id="flipAll">전체 뒤집기 ↺</button>
+    </div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <!-- ============ TAB 6 : QUIZ ============ -->
+  <section class="panel" id="quiz">
+    <div class="panel-head">
+      <h2>확인문제</h2>
+      <p>목표 어법·표현·단어·내용이해 10문항. 보기를 누르면 정답과 해설이 바로 나와요.</p>
+    </div>
+    <div class="quiz-top">
+      <div class="score">점수 <b id="score">0</b> / 10</div>
+      <button class="reset" id="resetQuiz">다시 풀기 ↻</button>
+    </div>
+    <div id="quizBody"></div>
+  </section>
+
+</div>
+
+<footer>
+  <span class="mark">에듀케레 바른교육연구소</span>
+</footer>
+
+<script>
+/* ---------- TAB SWITCHING ---------- */
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  panels.forEach(p=>p.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById(t.dataset.tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+/* ---------- KOREAN TOGGLE ---------- */
+document.querySelectorAll('.ko-toggle').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const scope = document.getElementById(btn.dataset.scope+'-body');
+    const off = scope.classList.toggle('ko-hide');
+    btn.classList.toggle('off', off);
+    btn.innerHTML = '<span class="dot"></span>한글 보기 ' + (off?'OFF':'ON');
+  });
+});
+
+/* ---------- VOCABULARY ---------- */
+const vocab = [
+  // 대화문 단어
+  {w:'teen', pos:'명', m:'십 대', c:'dlg'},
+  {w:'stress', pos:'명/동', m:'스트레스 (를 주다)', c:'dlg'},
+  {w:'stressed', pos:'형', m:'스트레스를 받는', c:'dlg'},
+  {w:'common', pos:'형', m:'흔한', c:'dlg'},
+  {w:'cause', pos:'명', m:'원인', c:'dlg'},
+  {w:'schoolwork', pos:'명', m:'학업', c:'dlg'},
+  {w:'appearance', pos:'명', m:'외모', c:'dlg'},
+  {w:'used to', pos:'', m:'~하곤 했다', c:'dlg'},
+  {w:'helpful', pos:'형', m:'도움이 되는', c:'dlg'},
+  {w:'focus', pos:'동', m:'집중하다', c:'dlg'},
+  {w:'improve', pos:'동', m:'향상시키다, 높이다', c:'dlg'},
+  {w:'memory', pos:'명', m:'기억력', c:'dlg'},
+  {w:'decide on', pos:'', m:'~을 결정하다', c:'dlg'},
+  {w:'make sense', pos:'', m:'일리가 있다', c:'dlg'},
+  {w:'expensive', pos:'형', m:'비싼', c:'dlg'},
+  {w:'well-known', pos:'형', m:'유명한, 잘 알려진', c:'dlg'},
+  {w:'painter', pos:'명', m:'화가', c:'dlg'},
+  {w:'architect', pos:'명', m:'건축가', c:'dlg'},
+  {w:'actor', pos:'명', m:'배우', c:'dlg'},
+  {w:'patient', pos:'형', m:'참을성 있는', c:'dlg'},
+  {w:'relieved', pos:'형', m:'안심이 되는', c:'dlg'},
+  // 본문 단어
+  {w:'spend time', pos:'', m:'시간을 보내다', c:'read'},
+  {w:'feel low', pos:'', m:'기운이 없다, 울적하다', c:'read'},
+  {w:'deal with', pos:'', m:'~을 다루다, 처리하다', c:'read'},
+  {w:'suggest', pos:'동', m:'제안하다', c:'read'},
+  {w:'break a promise', pos:'', m:'약속을 어기다', c:'read'},
+  {w:'argue', pos:'동', m:'언쟁하다', c:'read'},
+  {w:'scary', pos:'형', m:'무서운', c:'read'},
+  {w:'scream', pos:'동', m:'소리 지르다', c:'read'},
+  {w:'at the top of one\'s lungs', pos:'', m:'목청껏, 큰 소리로', c:'read'},
+  {w:'thanks to', pos:'', m:'~ 덕분에', c:'read'},
+  {w:'bother', pos:'동', m:'괴롭히다, 힘들게 하다', c:'read'},
+  {w:'method', pos:'명', m:'방법', c:'read'},
+  {w:'work', pos:'동', m:'효과가 있다', c:'read'},
+  {w:'graduate from', pos:'', m:'~을 졸업하다', c:'read'},
+  {w:'look for', pos:'', m:'~을 찾다', c:'read'},
+  {w:'be stressed out', pos:'', m:'스트레스를 받다', c:'read'},
+  {w:'positive', pos:'형', m:'긍정적인', c:'read'},
+  {w:'get upset', pos:'', m:'속상해하다', c:'read'},
+  {w:'focused', pos:'형', m:'집중한, 몰입한', c:'read'},
+  {w:'leave ~ behind', pos:'', m:'~을 남겨 두고 잊다', c:'read'},
+  {w:'besides', pos:'부', m:'게다가', c:'read'},
+  {w:'focus on', pos:'', m:'~에 집중하다', c:'read'},
+  {w:'stay free from', pos:'', m:'~으로부터 벗어나다', c:'read'},
+  {w:'gloomy', pos:'형', m:'우울한', c:'read'},
+  {w:'tidy', pos:'형', m:'깔끔한', c:'read'},
+  {w:'relieve', pos:'동', m:'해소하다, 덜어 주다', c:'read'},
+  {w:'take time out', pos:'', m:'시간을 내다', c:'read'},
+  {w:'as long as', pos:'', m:'~하는 한, ~이기만 하면', c:'read'},
+  {w:'matter', pos:'동', m:'중요하다', c:'read'}
+];
+const deck = document.getElementById('deck');
+function renderDeck(filter){
+  deck.innerHTML='';
+  vocab.filter(v=>filter==='all'||v.c===filter).forEach(v=>{
+    const card=document.createElement('div');
+    card.className='fc';
+    card.innerHTML=`<div class="fc-inner">
+      <div class="fc-face fc-front"><div class="w">${v.w}</div>${v.pos?`<div class="pos">${v.pos}</div>`:''}<div class="fc-hint">탭하면 뜻 보기</div></div>
+      <div class="fc-face fc-back"><div class="m">${v.m}</div><div class="fc-hint">탭하면 단어 보기</div></div>
+    </div>`;
+    card.addEventListener('click',()=>card.classList.toggle('flipped'));
+    deck.appendChild(card);
+  });
+}
+renderDeck('all');
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+  c.classList.add('active');
+  renderDeck(c.dataset.filter);
+}));
+let allFlipped=false;
+document.getElementById('flipAll').addEventListener('click',()=>{
+  allFlipped=!allFlipped;
+  document.querySelectorAll('.fc').forEach(f=>f.classList.toggle('flipped',allFlipped));
+});
+
+/* ---------- QUIZ ---------- */
+const quiz=[
+  {q:'빈칸에 알맞은 것은? Good horror movies are ___ scary ___ I scream a lot.',
+   opts:['so / that','too / to','such / that','very / so'],a:0,
+   e:'so + 형용사 + that + 주어 + 동사 = 너무 ~해서 …하다. 보어 자리라 so와 that 사이에 형용사 scary.'},
+  {q:'현재완료진행형으로 올바른 문장은?',
+   opts:["I've been using this method for several months.","I am use this method.","I been use this method.","I has using this method."],a:0,
+   e:'현재완료진행형은 <has[have] been + -ing>. 주어 I라 have been using이 맞다.'},
+  {q:'이유를 물을 때 쓰는 표현은?',
+   opts:['What makes you say that?','That makes sense.','I\'d like to talk about it.','Let me show you.'],a:0,
+   e:'What makes you say that?는 "왜 그렇게 말하니?"로 이유를 묻는 표현. That makes sense.는 동의 표현이다.'},
+  {q:'주제를 소개할 때 쓰는 표현이 아닌 것은?',
+   opts:['What makes you say that?','I\'d like to talk about ~','Let\'s talk about ~','I\'m going to talk about ~'],a:0,
+   e:'What makes you say that?는 "이유 묻기" 표현이다. 나머지는 모두 "주제 소개하기" 표현이다.'},
+  {q:'밑줄 친 단어의 뜻이 알맞은 것은? She cleans her room when her life looks gloomy.',
+   opts:['gloomy = 우울한','gloomy = 깔끔한','gloomy = 바쁜','gloomy = 긍정적인'],a:0,
+   e:'gloomy는 "우울한". 본문에서 스트레스를 너무 받아 인생이 우울해 보일 때 방을 청소한다고 했다.'},
+  {q:'미나(Mina)가 스트레스를 푸는 방법은?',
+   opts:['공포 영화를 보며 소리 지르기','낚시하기','방 청소하기','"나만의 시간" 갖기'],a:0,
+   e:'미나는 공포 영화를 보며 힘껏 소리를 지르면 기분이 나아진다고 했다. 낚시=준호의 삼촌, 청소=도빈의 누나, Me Time=Yulia의 엄마.'},
+  {q:'준호(Junho)의 삼촌에 대한 설명으로 알맞은 것은?',
+   opts:['직장을 구하고 있고, 낚시로 긍정적으로 지낸다','대학에 다니고 있다','물고기를 못 잡으면 화를 낸다','청소로 스트레스를 푼다'],a:0,
+   e:'삼촌은 2년 전 대학을 졸업하고 직장을 구하는 중이며, 낚시를 다니며 긍정적으로 지내려 노력한다. 물고기를 못 잡아도 절대 속상해하지 않는다.'},
+  {q:'도빈(Dobin)의 누나가 스트레스를 푸는 방법은?',
+   opts:['방을 청소한다','공포 영화를 본다','낚시를 한다','책을 읽는다'],a:0,
+   e:'누나는 방(her room)을 청소하면 스트레스가 해소되는 것 같다고 했다. (집 전체가 아니라 "방"임에 유의.)'},
+  {q:'빈칸에 알맞은 관계대명사는? I can forget about ___ bothers me.',
+   opts:['what','who','which','that'],a:0,
+   e:'선행사를 포함하는 관계대명사 what이 와야 한다. what bothers me = "나를 괴롭히는 것".'},
+  {q:'Yulia의 어머니가 "Me Time"에 하는 일이 아닌 것은?',
+   opts:['공포 영화를 보며 소리 지른다','책을 읽는다','영화를 본다','친구들과 이야기한다'],a:0,
+   e:'어머니는 책을 읽거나, 영화를 보거나, 친구들과 이야기를 나눈다. 공포 영화를 보며 소리 지르는 것은 미나의 방법이다.'}
+];
+const quizBody=document.getElementById('quizBody');
+let answered=[];
+function renderQuiz(){
+  quizBody.innerHTML='';
+  answered=new Array(quiz.length).fill(false);
+  document.getElementById('score').textContent='0';
+  quiz.forEach((item,i)=>{
+    const div=document.createElement('div');
+    div.className='q';
+    let opts='';
+    item.opts.forEach((o,j)=>{opts+=`<button class="opt" data-q="${i}" data-o="${j}"><span class="oen">${o}</span></button>`;});
+    div.innerHTML=`<div class="qn"><span class="num">Q${i+1}.</span>${item.q}</div>${opts}<div class="expl" id="expl-${i}">${item.e}</div>`;
+    quizBody.appendChild(div);
+  });
+  document.querySelectorAll('.opt').forEach(btn=>btn.addEventListener('click',onAnswer));
+}
+function onAnswer(e){
+  const btn=e.currentTarget;
+  const qi=+btn.dataset.q, oi=+btn.dataset.o;
+  if(answered[qi])return;
+  answered[qi]=true;
+  const correct=quiz[qi].a;
+  const opts=quizBody.querySelectorAll(`.opt[data-q="${qi}"]`);
+  opts.forEach(o=>{
+    o.classList.add('locked');
+    const j=+o.dataset.o;
+    if(j===correct){o.classList.add('correct');o.innerHTML+=' <span class="mk">✓</span>';}
+    if(j===oi && oi!==correct){o.classList.add('wrong');o.innerHTML+=' <span class="mk">✕</span>';}
+  });
+  document.getElementById('expl-'+qi).classList.add('show');
+  if(oi===correct){
+    const s=document.getElementById('score');
+    s.textContent=(+s.textContent)+1;
+  }
+}
+document.getElementById('resetQuiz').addEventListener('click',()=>{renderQuiz();window.scrollTo({top:0,behavior:'smooth'});});
+renderQuiz();
+</script>
+
+</body>
+</html>
